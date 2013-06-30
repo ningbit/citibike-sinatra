@@ -1,1 +1,8 @@
-<%= @data.inspect %>
+<h1>Home</h1>
+
+
+<ul>
+  <% @data.each do |location| %>
+    <li><%="Location: #{location["name"]}\t" + "Coordinates: #{location["lat"]},#{location["lng"]}"%></li>
+  <% end %>
+</ul>

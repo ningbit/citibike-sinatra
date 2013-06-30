@@ -1,0 +1,19 @@
+<h1>MAP MY BIKE ROUTE</h1>
+
+<form action="/map" method="post">
+  <h3>Start:</h3>
+  <select name="start">
+    <% @data.each do |location| %>
+      <option value="<%= [location["lat"].to_f/1.0E6, location["lng"].to_f/1.0E6]%>"><%=location["name"]%></option>
+    <% end %>
+  </select></br>
+
+  <h3>End:</h3>
+  <select name="end">
+    <% @data.each do |location| %>
+      <option value="<%= [location["lat"].to_f/1.0E6, location["lng"].to_f/1.0E6]%>"><%=location["name"]%></option>
+    <% end %>
+  </select></br>
+
+  <button type="submit">Submit</button>
+</form>
